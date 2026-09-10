@@ -1,0 +1,12 @@
+# No laboratório real no GitLab, troque o host/namespace conforme seu GitLab pessoal.
+include:
+  - project: 'Danylo93/platform-pipeline-templates'
+    ref: main
+    file: '/default-pipeline.yml'
+
+variables:
+  APP_NAME: platform-sample-application
+  DEPLOYMENT_BRANCH: deployment_files
+
+# Para praticar a exceção controlada, substitua o include acima por:
+# file: '/custom-pipeline.yml'
