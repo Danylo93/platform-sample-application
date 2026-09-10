@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: platform-sample-hml
-  namespace: openshift-gitops
+  namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/Danylo93/platform-sample-application.git
+    repoURL: git@github.com:Danylo93/platform-sample-application.git
     targetRevision: deployment_files
     path: gitops/chart
     helm:
