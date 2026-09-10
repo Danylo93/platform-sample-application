@@ -1,8 +1,21 @@
 replicaCount: 1
+
 image:
-  repository: harbor.local/platform-lab/platform-sample-application
-  tag: latest
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
 service:
   port: 8080
+  targetPort: 80
+
 route:
-  enabled: true
+  enabled: false
+
+probes:
+  readiness:
+    path: /
+  liveness:
+    path: /
+
+resources: {}
