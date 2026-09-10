@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: platform-sample-hml
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Danylo93/platform-sample-application.git
+    targetRevision: deployment_files
+    path: gitops/chart
+    helm:
+      valueFiles:
+        - ../environments/hml/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: platform-hml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
