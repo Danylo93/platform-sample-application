@@ -1,0 +1,8 @@
+replicaCount: 1
+image:
+  repository: harbor.local/platform-lab/platform-sample-application
+  tag: latest
+service:
+  port: 8080
+route:
+  enabled: true
