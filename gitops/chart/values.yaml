@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: harbor.local/platform-lab/platform-sample-application
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  port: 8080
+
+route:
+  enabled: true
+
+resources: {}
